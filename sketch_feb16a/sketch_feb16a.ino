@@ -51,7 +51,7 @@ void loop() {
 void TempoRosso() {
 
   Serial.begin(9600);
-  //misura in millisecondi
+  
   Serial.print("Quanto resta acceso il rosso?"); 
   while(Serial.available() == 0) {};
   temporosso = Serial.readString().toInt();
@@ -61,7 +61,7 @@ void TempoRosso() {
 void TempoGiallo() {
 
   Serial.begin(9600);
-  // misura in millisecondi
+  
   Serial.print("Quanto resta acceso il giallo?");
   while(Serial.available() == 0) {};
   tempogiallo = Serial.readString().toInt();
@@ -71,7 +71,7 @@ void TempoGiallo() {
 void TempoBianco() {
 
   Serial.begin(9600);
-  // misura in millisecondi
+  
   Serial.print("Quanto resta acceso il bianco?");
   while(Serial.available() == 0) {};
   tempobianco = Serial.readString().toInt();
@@ -81,7 +81,7 @@ void TempoBianco() {
 void TempoVerde() {
 
   Serial.begin(9600);
-  // misura in millisecondi
+  
   Serial.print("Quanto resta acceso il verde?");
   while(Serial.available() == 0) {};
   tempoverde = Serial.readString().toInt();
