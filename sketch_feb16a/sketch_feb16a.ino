@@ -1,4 +1,4 @@
-
+// variabili che mi servono per il tempo in cui restano accesi i led 
 int temporosso;
 int tempogiallo;
 int tempobianco;
@@ -7,6 +7,7 @@ int tempoverde;
 void setup() {
   // put your setup code here, to run once:
 
+  // valori delle variabili
   temporosso = 0;
   tempogiallo = 0;
   tempobianco = 0;
@@ -17,14 +18,34 @@ void setup() {
   pinMode(7, OUTPUT); //bianco
   pinMode(5, OUTPUT); //verde
 
+  // i metodi per far funzionare il programma
+  TempoRosso();
+  TempoGiallo();
+  TempoBianco();
+  TempoVerde();
+
 }
 
 
 void loop() {
   // put your main code here, to run repeatedly:
 
+  digitalWrite(5, LOW);
+  digitalWrite(13, HIGH);
+  delay(temporosso);
+  digitalWrite(13, LOW);
+  digitalWrite(11, HIGH);
+  delay(tempogiallo);
+  digitalWrite(11, LOW);
+  digitalWrite(7, HIGH);
+  delay(tempobianco);
+  digitalWrite(7, LOW);
+  digitalWrite(5, HIGH);
+  delay(tempoverde);
+
 }
 
+// metodo per accendere il rosso
 void TempoRosso() {
 
   Serial.begin(9600);
@@ -33,6 +54,7 @@ void TempoRosso() {
   temporosso = Serial.readString().toInt();
 }
 
+// metodo per accendere il giallo
 void TempoGiallo() {
 
   Serial.begin(9600);
@@ -41,6 +63,7 @@ void TempoGiallo() {
   tempogiallo = Serial.readString().toInt();
 }
 
+// metodo per accendere il bianco
 void TempoBianco() {
 
   Serial.begin(9600);
@@ -49,6 +72,7 @@ void TempoBianco() {
   tempobianco = Serial.readString().toInt();
 }
 
+// metodo per accendere il verde
 void TempoVerde() {
 
   Serial.begin(9600);
