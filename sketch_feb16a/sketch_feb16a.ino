@@ -8,10 +8,10 @@ void setup() {
   // put your setup code here, to run once:
 
   // valori delle variabili
-  temporosso = 0; //millisecondi
-  tempogiallo = 0;  //millisecondi
-  tempobianco = 0; //millisecondi
-  tempoverde = 0; // millisecondi
+  temporosso = 0; 
+  tempogiallo = 0;  
+  tempobianco = 0; 
+  tempoverde = 0; 
   
   pinMode(13, OUTPUT); //rosso
   pinMode(11, OUTPUT); //giallo
@@ -20,10 +20,10 @@ void setup() {
 
   // i metodi per far funzionare il programma
   
-  TempoRosso(); // 1 secondo = 1000
-  TempoGiallo(); // 1 secondo = 1000
-  TempoBianco(); // 1 secondo = 1000
-  TempoVerde(); // 1 secondo = 1000
+  TempoRosso(); // 1 secondo = 1000 ms 
+  TempoGiallo(); // 1 secondo = 1000 ms
+  TempoBianco(); // 1 secondo = 1000 ms
+  TempoVerde(); // 1 secondo = 1000 ms
 
 }
 
@@ -51,6 +51,7 @@ void loop() {
 void TempoRosso() {
 
   Serial.begin(9600);
+  //misura in millisecondi
   Serial.print("Quanto resta acceso il rosso?"); 
   while(Serial.available() == 0) {};
   temporosso = Serial.readString().toInt();
@@ -60,6 +61,7 @@ void TempoRosso() {
 void TempoGiallo() {
 
   Serial.begin(9600);
+  // misura in millisecondi
   Serial.print("Quanto resta acceso il giallo?");
   while(Serial.available() == 0) {};
   tempogiallo = Serial.readString().toInt();
@@ -69,6 +71,7 @@ void TempoGiallo() {
 void TempoBianco() {
 
   Serial.begin(9600);
+  // misura in millisecondi
   Serial.print("Quanto resta acceso il bianco?");
   while(Serial.available() == 0) {};
   tempobianco = Serial.readString().toInt();
@@ -78,6 +81,7 @@ void TempoBianco() {
 void TempoVerde() {
 
   Serial.begin(9600);
+  // misura in millisecondi
   Serial.print("Quanto resta acceso il verde?");
   while(Serial.available() == 0) {};
   tempoverde = Serial.readString().toInt();
