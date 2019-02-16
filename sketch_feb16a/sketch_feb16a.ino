@@ -20,10 +20,10 @@ void setup() {
 
   // i metodi per far funzionare il programma
   
-  TempoRosso(); // 1 secondo = 1000 ms 
-  TempoGiallo(); // 1 secondo = 1000 ms
-  TempoBianco(); // 1 secondo = 1000 ms
-  TempoVerde(); // 1 secondo = 1000 ms
+  TempoRosso(); 
+  TempoGiallo(); 
+  TempoBianco(); 
+  TempoVerde(); 
 
 }
 
@@ -33,16 +33,16 @@ void loop() {
 
   
   digitalWrite(13, HIGH);
-  delay(temporosso);
+  delay(temporosso * 1000);
   digitalWrite(13, LOW);
   digitalWrite(11, HIGH);
-  delay(tempogiallo);
+  delay(tempogiallo * 1000);
   digitalWrite(11, LOW);
   digitalWrite(7, HIGH);
-  delay(tempobianco);
+  delay(tempobianco * 1000);
   digitalWrite(7, LOW);
   digitalWrite(5, HIGH);
-  delay(tempoverde);
+  delay(tempoverde * 1000);
   digitalWrite(5, LOW);
 
 }
