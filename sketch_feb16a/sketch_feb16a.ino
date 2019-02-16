@@ -8,10 +8,10 @@ void setup() {
   // put your setup code here, to run once:
 
   // valori delle variabili
-  temporosso = 0;
-  tempogiallo = 0;
-  tempobianco = 0;
-  tempoverde = 0;
+  temporosso = 0; //millisecondi
+  tempogiallo = 0;  //millisecondi
+  tempobianco = 0; //millisecondi
+  tempoverde = 0; // millisecondi
   
   pinMode(13, OUTPUT); //rosso
   pinMode(11, OUTPUT); //giallo
@@ -19,10 +19,11 @@ void setup() {
   pinMode(5, OUTPUT); //verde
 
   // i metodi per far funzionare il programma
-  TempoRosso();
-  TempoGiallo();
-  TempoBianco();
-  TempoVerde();
+  
+  TempoRosso(); // 1 secondo = 1000
+  TempoGiallo(); // 1 secondo = 1000
+  TempoBianco(); // 1 secondo = 1000
+  TempoVerde(); // 1 secondo = 1000
 
 }
 
@@ -30,7 +31,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  digitalWrite(5, LOW);
+  
   digitalWrite(13, HIGH);
   delay(temporosso);
   digitalWrite(13, LOW);
@@ -42,6 +43,7 @@ void loop() {
   digitalWrite(7, LOW);
   digitalWrite(5, HIGH);
   delay(tempoverde);
+  digitalWrite(5, LOW);
 
 }
 
@@ -49,7 +51,7 @@ void loop() {
 void TempoRosso() {
 
   Serial.begin(9600);
-  Serial.print("Quanto resta acceso il rosso?");
+  Serial.print("Quanto resta acceso il rosso?"); 
   while(Serial.available() == 0) {};
   temporosso = Serial.readString().toInt();
 }
